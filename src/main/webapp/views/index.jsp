@@ -1,6 +1,7 @@
 <html>
 <head>
 	<title>Projeto Engenharia</title>
+	<meta charset="UTF-8">
 </head>
 <body>
 	<div class="container" style="
@@ -9,24 +10,19 @@
     width: 50%;
     margin: 2% auto 0 auto;
 ">
-		<div class="title" style="
-    display: block;
-    text-align: center;
-    /* width: 50%; */
-    margin: 2% auto 0 auto;
-">
-			<h2>Projeto Engenharia</h2>
+		<div class="title" style="display: block; text-align: center; margin: 2% auto 0 auto;">
+			<h1>Projeto Engenharia</h1>
 		</div>
-		<div class="formulario" style="
-    display: block;
-    text-align: center;
-    width: 50%;
-    margin: 15% auto 0 auto;
-">
+		<div class="formulario" style="display: block; text-align: center; width: 50%; margin: 15% auto 0 auto; ">
 			<form action="">
 				<input type="file" name="arquivo">
 				<input type="submit">
 			</form>
+		</div>
+		<div class="Relatorios" style="display: block; text-align: center; margin: 15% auto 0 auto; ">
+			<a href="/ralfabetica"><h2>Relatório de clientes em ordem alfabética</h2></a>
+			<a href="/rcidade"><h2>Relatório de clientes por ordem de cidade</h2></a>
+			<a href="/rpais"><h2>Relatório de clientes por ordem de País</h2></a>
 		</div>
 	</div>
 </body>
