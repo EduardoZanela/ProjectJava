@@ -11,4 +11,9 @@ public class IndexController {
 	public ModelAndView index(){
 		return new ModelAndView("index");
 	}
+	
+	@RequestMapping(value="/upload", method=RequestMethod.POST)
+	public @ResponseBody String handleFileUpload(@RequestParam("file") MultipartFile file){
+	}
+	
 }
