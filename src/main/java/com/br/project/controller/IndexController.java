@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.project.model.FileReader;
+
 @Controller
 public class IndexController {
 	
 	@RequestMapping("/")
 	public ModelAndView index(){
-		return new ModelAndView("index");
+		//Example to send object to JSP
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("profession", true);
+		return mv;
 	}
 	
 	@RequestMapping(value="/upload", method=RequestMethod.POST)
@@ -38,12 +43,12 @@ public class IndexController {
                    dir.mkdirs();
                
                // Create the file on server
-               File serverFile = new File("C://Users//Eduardo" + File.separator + file.getOriginalFilename());
+               File serverFile = new File("C:\\Users\\Eduardo\\Documents\\ProjectEngenier\\Projeto\\ProjectJava\\uploads\\" + File.separator + "cc.txt");
                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
                stream.write(bytes);
                stream.close();
-
-
+               FileReader fr = new FileReader();
+               fr.read();
                return index();
 
             } 
