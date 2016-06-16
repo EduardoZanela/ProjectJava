@@ -3,7 +3,6 @@ CREATE TABLE Usuario
 Cidade char(100),
 Estado char(100),
 Pais char(100),
-Country char(100),
-Birth_Date datetime
-Sexo char(50)
+Birth_Date date,
+Sexo char(50),
 Profissao char(100));
