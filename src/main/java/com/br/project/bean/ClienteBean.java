@@ -4,15 +4,17 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import org.springframework.beans.factory.annotation.Required;
+
 @Entity
 @Table(name = "NOTE")
 public class ClienteBean {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue 
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "nome")
+	@Column(name = "nome") 
 	private String Nome;
 	
 	@Column(name = "Cidade")
@@ -25,12 +27,15 @@ public class ClienteBean {
 	private String Pais;
 	
 	@Column(name = "Birth_Date")
-	private Date Aniversario;
+	private String Aniversario;
 	
 	@Column(name = "Civil")
 	private String Civil;
 	
+	@Column(name = "Sexo")
 	private String Sexo;
+	
+	@Column(name = "Profissao")
 	private String Profissao;
 	
 	
@@ -58,10 +63,10 @@ public class ClienteBean {
 	public void setPais(String pais) {
 		Pais = pais;
 	}
-	public Date getAniversario() {
+	public String getAniversario() {
 		return Aniversario;
 	}
-	public void setAniversario(Date aniversario) {
+	public void setAniversario(String aniversario) {
 		Aniversario = aniversario;
 	}
 	public String getCivil() {

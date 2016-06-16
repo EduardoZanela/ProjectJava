@@ -6,25 +6,32 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+import com.br.project.bean.ClienteBean;
+
 public class FileReader {
+	
+	ClienteBean cliente = new ClienteBean();
+	ClienteModel model = new ClienteModel();
+	
 	public void read( ) throws Exception {
 		 try{
-            System.out.println("Entrou!");
-            String aa = System.getProperty("user.dir");
-            File file = new File ("C:\\Users\\Eduardo\\Documents\\ProjectEngenier\\Projeto\\ProjectJava\\uploads\\cc.txt");
-            System.out.println(file.getAbsolutePath()+aa);
+			File file = new File ("C:\\Users\\Eduardo\\Documents\\ProjectEngenier\\Projeto\\ProjectJava\\uploads\\cc.txt");
             FileInputStream arquivo = new FileInputStream(file);
             InputStreamReader ler = new InputStreamReader(arquivo);
             BufferedReader x = new BufferedReader(ler);
-            String linha = x.readLine();
-            while(linha != null) {
-                String Tipo = linha;
-                String Nome = linha;
-                String Campo = linha;
-                System.out.println(Tipo);
-                System.out.println(Nome);
-                System.out.println(Campo);
-                linha = x.readLine();
+            String name = x.readLine();
+            while(name != null) {
+                cliente.setNome(name);
+                cliente.setCidade(x.readLine());
+                cliente.setEstado(x.readLine());
+                cliente.setPais(x.readLine());
+                cliente.setAniversario(x.readLine());
+                cliente.setCivil(x.readLine());
+                cliente.setSexo(x.readLine());
+                cliente.setProfissao(x.readLine());                
+                System.out.println(name);
+                name = x.readLine();
+                model.gravar(cliente);
             }
         }catch(Exception e){
             System.out.println(e);
