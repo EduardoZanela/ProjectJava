@@ -35,7 +35,7 @@ public class ClienteModel {
 	      try{
 	    	 Map users = null;
 	    	 session.beginTransaction();
-	         String sql = "SELECT * FROM EMPLOYEE ORDER BY NOME";
+	         String sql = "SELECT * FROM USUARIO ORDER BY NOME";
 	         SQLQuery query = session.createSQLQuery(sql);
 	         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 	         List data = query.list();
