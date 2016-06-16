@@ -19,18 +19,21 @@ public class ClienteModel {
 	        session.beginTransaction();
 	        session.save(cliente);
 	        session.getTransaction().commit();
+	        session.close();
 	        return true;
 	    }
 	    catch (Exception e) {
 	        session.getTransaction().rollback();
+	        session.close();
 	        return false;
-	    }
+	    }	    
 	}
 	
 
-	   public boolean listEmployeesScalar( ){
+	   public Map listEmployeesScalar( ){
 		  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 	      try{
+	    	 Map users = null;
 	    	 session.beginTransaction();
 	         String sql = "SELECT * FROM EMPLOYEE ORDER BY NOME";
 	         SQLQuery query = session.createSQLQuery(sql);
@@ -39,15 +42,15 @@ public class ClienteModel {
 	
 	         for(Object object : data)
 	         {
-	            Map row = (Map)object;
-	            System.out.print("First Name: " + row.get("first_name")); 
-	            System.out.println(", Salary: " + row.get("salary")); 
+	            users = (Map)object;
+	            System.out.print("First Name: " + users.get("Nome")); 
+	            System.out.println(", Salary: " + users.get("Cidade")); 
 	         }
 	         session.getTransaction().commit();
-	         return true;
+	         return users;
 	      }catch (Exception e) {
-		        session.getTransaction().rollback();
-		        return false;
+		        session.getTransaction().rollback();		        
 		    }
+		return null;
 	   }
 }
