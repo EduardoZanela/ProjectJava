@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 public class FileReader {
 	public void read( ) throws Exception {
-		 // TODO Auto-generated method stub
-        try{
+		 try{
             System.out.println("Entrou!");
             String aa = System.getProperty("user.dir");
             File file = new File ("C:\\Users\\Eduardo\\Documents\\ProjectEngenier\\Projeto\\ProjectJava\\uploads\\cc.txt");
