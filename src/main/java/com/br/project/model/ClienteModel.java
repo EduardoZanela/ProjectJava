@@ -40,12 +40,6 @@ public class ClienteModel {
 	         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 	         List data = query.list();
 	         System.out.println("Retorno: "+data);
-	         for(Object object : data)
-	         {
-	            users = (Map)object;
-	            System.out.print("First Name: " + users.get("nome")); 
-	            System.out.println("Cidade: " + users.get("cidade")); 
-	         }
 	         session.getTransaction().commit();
 	         return data;
 	      }catch (Exception e) {
@@ -53,4 +47,39 @@ public class ClienteModel {
 		    }
 		return null;
 	   }
+	   
+	   public List listcidade( ){
+			  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		      try{
+		    	 Map users = null;
+		    	 session.beginTransaction();
+		         String sql = "SELECT * FROM USUARIO ORDER BY CIDADE";
+		         SQLQuery query = session.createSQLQuery(sql);
+		         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		         List data = query.list();
+		         System.out.println("Retorno: "+data);
+		         session.getTransaction().commit();
+		         return data;
+		      }catch (Exception e) {
+			        session.getTransaction().rollback();		        
+			    }
+			return null;
+		}
+	   public List listpais( ){
+			  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
+		      try{
+		    	 Map users = null;
+		    	 session.beginTransaction();
+		         String sql = "SELECT * FROM USUARIO ORDER BY PAIS";
+		         SQLQuery query = session.createSQLQuery(sql);
+		         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		         List data = query.list();
+		         System.out.println("Retorno: "+data);
+		         session.getTransaction().commit();
+		         return data;
+		      }catch (Exception e) {
+			        session.getTransaction().rollback();		        
+			    }
+			return null;
+		   }
 }

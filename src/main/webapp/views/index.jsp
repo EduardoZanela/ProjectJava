@@ -16,8 +16,8 @@
 		</div>
 		<div class="Relatorios" style="display: block; text-align: center; margin: 15% auto 0 auto; ">
 			<a href="/Project/ralfabetica"><h2>Relatório de clientes em ordem alfabética</h2></a>
-			<a href="/rcidade"><h2>Relatório de clientes por ordem de cidade</h2></a>
-			<a href="/rpais"><h2>Relatório de clientes por ordem de País</h2></a>
+			<a href="/Project/rcidade"><h2>Relatório de clientes por ordem de cidade</h2></a>
+			<a href="/Project/rpais"><h2>Relatório de clientes por ordem de País</h2></a>
 		</div>
 	</div>
 </body>

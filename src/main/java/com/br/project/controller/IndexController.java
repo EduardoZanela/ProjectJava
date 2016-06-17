@@ -34,6 +34,22 @@ public class IndexController {
 		return mv;
 	}
 	
+	@RequestMapping("/rcidade")
+	public ModelAndView relatorioCidade(){
+		ClienteModel cm = new ClienteModel();
+		ModelAndView mv = new ModelAndView("rcidade");
+		mv.addObject("usuarios", cm.listcidade());
+		return mv;
+	}
+	
+	@RequestMapping("/rpais")
+	public ModelAndView relatorioPais(){
+		ClienteModel cm = new ClienteModel();
+		ModelAndView mv = new ModelAndView("rpais");
+		mv.addObject("usuarios", cm.listpais());
+		return mv;
+	}
+	
 	@RequestMapping(value="/upload", method=RequestMethod.POST)
 	public @ResponseBody ModelAndView handleFileUpload(@RequestParam("file") MultipartFile file){
 		if (!file.isEmpty()) {

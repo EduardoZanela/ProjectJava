@@ -7,7 +7,7 @@
 </head>
 <body>
 <table style="width:100%">
- 
+  
 <c:forEach items="${usuarios}" var="a">
  <tr>
  <td>${a.nome}</td>
