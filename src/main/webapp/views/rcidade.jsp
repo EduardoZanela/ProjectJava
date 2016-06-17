@@ -21,7 +21,7 @@
     <thead>
       <tr>
         <th>Nome</th>
-        <th>Cidade</th>
+        <th style="color: red;">Cidade</th>
         <th>Estado</th>
         <th>Pais</th>
         <th>Aniversario</th>

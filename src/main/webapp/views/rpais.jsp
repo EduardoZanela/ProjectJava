@@ -23,7 +23,7 @@
         <th>Nome</th>
         <th>Cidade</th>
         <th>Estado</th>
-        <th>Pais</th>
+        <th style="color: red;">Pais</th>
         <th>Aniversario</th>
         <th>Estado Civil</th>
         <th>Sexo</th>

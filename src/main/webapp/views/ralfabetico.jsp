@@ -20,7 +20,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Nome</th>
+        <th style="color: red;">Nome</th>
         <th>Cidade</th>
         <th>Estado</th>
         <th>Pais</th>
