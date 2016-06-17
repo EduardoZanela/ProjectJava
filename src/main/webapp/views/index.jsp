@@ -8,7 +8,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: #929292;">
-	<div class="container" style="background-color: #e6e6e6; margin-top: 10%;">
+	<div class="container" style="background-color: #e6e6e6;">
   		<div class="jumbotron">
     		<h1 style="text-align: center;">Trabalho Engenharia MVC</h1>
   		</div>
@@ -24,14 +24,23 @@
 	
 		<h2>Relatorios</h2>
 	  	<ul class="list-group">
-	    	<li class="list-group-item"><span class="badge">1</span>
-	    		<a href="/Project/ralfabetica">Relatório de clientes em ordem alfabética</a>
+	    	<li class="list-group-item">
+	    		<form method="POST" action="/Project/relatorio" enctype="form-data">
+	    			<input type="hidden" name="param" value="nome">
+	    			<button type="submit" class="btn btn-info btn-block">Relatório de clientes em ordem alfabética</button>	    			
+	    		</form>
 	    	</li>
-	    	<li class="list-group-item"><span class="badge">2</span>
-	    		<a href="/Project/rcidade">Relatório de clientes por ordem de cidade</a>    	
+	    	<li class="list-group-item">
+	    		<form method="POST" action="/Project/relatorio" enctype="form-data">
+	    			<input type="hidden" name="param" value="cidade">
+	    			<button type="submit" class="btn btn-info btn-block">Relatório de clientes por ordem de cidade</button>
+	    		</form>    	
 	    	</li>
-	    	<li class="list-group-item"><span class="badge">3</span> 
-	    		<a href="/Project/rpais">Relatório de clientes por ordem de País</a>
+	    	<li class="list-group-item">
+	    		<form method="POST" action="/Project/relatorio" enctype="form-data">
+	    			<input type="hidden" name="param" value="pais">
+	    			<button type="submit" class="btn btn-info btn-block">Relatório de clientes por ordem de País</button>
+	    		</form>
 	    	</li>
 	  	</ul>
   	</div>

@@ -30,12 +30,12 @@ public class ClienteModel {
 	}
 	
 
-	   public List listalfabetica( ){
+	   public List listaClientesOrdenado(String order){
 		  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 	      try{
 	    	 Map users = null;
 	    	 session.beginTransaction();
-	         String sql = "SELECT * FROM USUARIO ORDER BY NOME";
+	         String sql = "SELECT * FROM USUARIO ORDER BY "+order;
 	         SQLQuery query = session.createSQLQuery(sql);
 	         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 	         List data = query.list();

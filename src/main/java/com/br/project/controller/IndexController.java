@@ -20,33 +20,51 @@ public class IndexController {
 	
 	@RequestMapping("/")
 	public ModelAndView index(){
-		//Example to send object to JSP
-		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("profession", true);
+		ModelAndView mv = new ModelAndView("index");		
 		return mv;
 	}
 	
-	@RequestMapping("/ralfabetica")
-	public ModelAndView relatorioAlfabetica(){
-		ClienteModel cm = new ClienteModel();
-		ModelAndView mv = new ModelAndView("ralfabetico");
-		mv.addObject("usuarios", cm.listalfabetica());
+	@RequestMapping("/relatorio")
+	public ModelAndView relatorioAlfabetica(@RequestParam("param") String param){
+		ModelAndView mv = new ModelAndView("relatorio");
+		String psql;
+		if(param.equalsIgnoreCase("nome")){
+			 psql="NOME";
+			 mv.addObject("colorN", "color: red");
+		}else if(param.equalsIgnoreCase("cidade")){
+			psql="CIDADE";
+			mv.addObject("colorC", "color: red");
+		}else if(param.equalsIgnoreCase("pais")){
+			psql="PAIS";
+			mv.addObject("colorP", "color: red");
+		}else{
+			psql="NOME";
+			mv.addObject("colorN", "color: red");
+		}
+		//ClienteModel cm = new ClienteModel();		
+		//mv.addObject("usuarios", cm.listaClientesOrdenado(psql));
+		mv.addObject("title", "Relatorio de clientes ordenado Alfabeticamente");		
+		System.out.println("psql "+psql);
 		return mv;
 	}
 	
 	@RequestMapping("/rcidade")
 	public ModelAndView relatorioCidade(){
 		ClienteModel cm = new ClienteModel();
-		ModelAndView mv = new ModelAndView("rcidade");
-		mv.addObject("usuarios", cm.listcidade());
+		ModelAndView mv = new ModelAndView("relatorio");
+		mv.addObject("usuarios", cm.listaClientesOrdenado("CIDADE"));
+		mv.addObject("title", "Relatorio de clientes ordenado por Cidade");
+		mv.addObject("colorC", "color: red");
 		return mv;
 	}
 	
 	@RequestMapping("/rpais")
 	public ModelAndView relatorioPais(){
 		ClienteModel cm = new ClienteModel();
-		ModelAndView mv = new ModelAndView("rpais");
-		mv.addObject("usuarios", cm.listpais());
+		ModelAndView mv = new ModelAndView("relatorio");
+		mv.addObject("usuarios", cm.listaClientesOrdenado("PAIS"));
+		mv.addObject("title", "Relatorio de clientes ordenado por País");
+		mv.addObject("colorP", "color: red");
 		return mv;
 	}
 	
