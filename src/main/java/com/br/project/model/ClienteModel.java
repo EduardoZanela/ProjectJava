@@ -53,10 +53,11 @@ public class ClienteModel {
 		      try{
 		    	 Map users = null;
 		    	 session.beginTransaction();
+		    	 session.createQuery("FROM USUARIO ORDER BY CIDADE").list();
 		         String sql = "SELECT * FROM USUARIO ORDER BY CIDADE";
 		         SQLQuery query = session.createSQLQuery(sql);
 		         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-		         List data = query.list();
+		         List data = session.createQuery("FROM USUARIO ORDER BY CIDADE").list();
 		         System.out.println("Retorno: "+data);
 		         session.getTransaction().commit();
 		         return data;

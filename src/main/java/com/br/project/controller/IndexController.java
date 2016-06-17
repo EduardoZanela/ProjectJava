@@ -20,7 +20,7 @@ public class IndexController {
 	
 	@RequestMapping("/")
 	public ModelAndView index(){
-		ModelAndView mv = new ModelAndView("index");		
+		ModelAndView mv = new ModelAndView("index1");		
 		return mv;
 	}
 	
@@ -31,42 +31,45 @@ public class IndexController {
 		if(param.equalsIgnoreCase("nome")){
 			 psql="NOME";
 			 mv.addObject("colorN", "color: red");
+			 mv.addObject("title", "Relatorio de clientes ordenado Alfabeticamente");
 		}else if(param.equalsIgnoreCase("cidade")){
 			psql="CIDADE";
 			mv.addObject("colorC", "color: red");
+			mv.addObject("title", "Relatorio de clientes ordenado por Cidade");
 		}else if(param.equalsIgnoreCase("pais")){
 			psql="PAIS";
 			mv.addObject("colorP", "color: red");
+			mv.addObject("title", "Relatorio de clientes ordenado por País");
 		}else{
 			psql="NOME";
 			mv.addObject("colorN", "color: red");
+			mv.addObject("title", "Relatorio de clientes ordenado Alfabeticamente");
 		}
-		//ClienteModel cm = new ClienteModel();		
-		//mv.addObject("usuarios", cm.listaClientesOrdenado(psql));
-		mv.addObject("title", "Relatorio de clientes ordenado Alfabeticamente");		
+		ClienteModel cm = new ClienteModel();		
+		mv.addObject("usuarios", cm.listaClientesOrdenado(psql));				
 		System.out.println("psql "+psql);
 		return mv;
 	}
 	
-	@RequestMapping("/rcidade")
-	public ModelAndView relatorioCidade(){
-		ClienteModel cm = new ClienteModel();
-		ModelAndView mv = new ModelAndView("relatorio");
-		mv.addObject("usuarios", cm.listaClientesOrdenado("CIDADE"));
-		mv.addObject("title", "Relatorio de clientes ordenado por Cidade");
-		mv.addObject("colorC", "color: red");
-		return mv;
-	}
-	
-	@RequestMapping("/rpais")
-	public ModelAndView relatorioPais(){
-		ClienteModel cm = new ClienteModel();
-		ModelAndView mv = new ModelAndView("relatorio");
-		mv.addObject("usuarios", cm.listaClientesOrdenado("PAIS"));
-		mv.addObject("title", "Relatorio de clientes ordenado por País");
-		mv.addObject("colorP", "color: red");
-		return mv;
-	}
+//	@RequestMapping("/rcidade")
+//	public ModelAndView relatorioCidade(){
+//		ClienteModel cm = new ClienteModel();
+//		ModelAndView mv = new ModelAndView("relatorio");
+//		mv.addObject("usuarios", cm.listaClientesOrdenado("CIDADE"));
+//		mv.addObject("title", "Relatorio de clientes ordenado por Cidade");
+//		mv.addObject("colorC", "color: red");
+//		return mv;
+//	}
+//	
+//	@RequestMapping("/rpais")
+//	public ModelAndView relatorioPais(){
+//		ClienteModel cm = new ClienteModel();
+//		ModelAndView mv = new ModelAndView("relatorio");
+//		mv.addObject("usuarios", cm.listaClientesOrdenado("PAIS"));
+//		mv.addObject("title", "Relatorio de clientes ordenado por País");
+//		mv.addObject("colorP", "color: red");
+//		return mv;
+//	}
 	
 	@RequestMapping(value="/upload", method=RequestMethod.POST)
 	public @ResponseBody ModelAndView handleFileUpload(@RequestParam("file") MultipartFile file){

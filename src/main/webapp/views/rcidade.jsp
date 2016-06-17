@@ -15,15 +15,15 @@
   <div class="jumbotron">
   	<h1 style="text-align: center;">Trabalho Engenharia MVC</h1>
   </div>
-  <h2>Relatorio de clientes ordenado por Cidade</h2>
+  <h2>>${title}</h2>
   <a href="/Project/" class="btn btn-info" role="button" style="float:right">Back to home</a>
   <table class="table">
     <thead>
       <tr>
-        <th>Nome</th>
-        <th style="color: red;">Cidade</th>
+       <th style="${colorN};">Nome</th>
+        <th style="${colorC};">Cidade</th>
         <th>Estado</th>
-        <th>Pais</th>
+        <th style="${colorP};">Pais</th>
         <th>Aniversario</th>
         <th>Estado Civil</th>
         <th>Sexo</th>

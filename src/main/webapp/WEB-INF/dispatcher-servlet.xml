@@ -26,8 +26,10 @@
  
 	<!-- SEM ESSA TAG NÃO CARREGA OS CSS/JS -->
 	<mvc:default-servlet-handler/>
+	
+	<mvc:resources mapping="/resources/**" location="/resources/" />
  
- 	<mvc:resources mapping="/assets/**" location="/assets/" cache-period="0" />
+ 	
 	 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
