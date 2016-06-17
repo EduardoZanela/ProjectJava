@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.br.project.model.ClienteModel;
 import com.br.project.model.FileReader;
 
 @Controller
@@ -25,6 +26,14 @@ public class IndexController {
 		return mv;
 	}
 	
+	@RequestMapping("/ralfabetica")
+	public ModelAndView relatorioAlfabetica(){
+		ClienteModel cm = new ClienteModel();
+		ModelAndView mv = new ModelAndView("ralfabetico");
+		mv.addObject("usuarios", cm.listalfabetica());
+		return mv;
+	}
+	
 	@RequestMapping(value="/upload", method=RequestMethod.POST)
 	public @ResponseBody ModelAndView handleFileUpload(@RequestParam("file") MultipartFile file){
 		if (!file.isEmpty()) {
@@ -33,7 +42,7 @@ public class IndexController {
                byte[] bytes = file.getBytes();
 
                // Create the file on server
-               File serverFile = new File("C:\\Users\\Eduardo\\Documents\\ProjectEngenier\\Projeto\\ProjectJava\\uploads\\" + File.separator + "cc.txt");
+               File serverFile = new File("C:\\Users\\Felipe\\Documents\\ProjetoEngenharia\\ProjectJava\\uploads\\" + File.separator + "cc.txt");
                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
                stream.write(bytes);
                stream.close();

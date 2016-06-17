@@ -15,22 +15,22 @@ public class FileReader {
 	
 	public void read( ) throws Exception {
 		 try{
-			File file = new File ("C:\\Users\\Eduardo\\Documents\\ProjectEngenier\\Projeto\\ProjectJava\\uploads\\cc.txt");
+			File file = new File ("C:\\Users\\Felipe\\Documents\\ProjetoEngenharia\\ProjectJava\\uploads\\cc.txt");
             FileInputStream arquivo = new FileInputStream(file);
             InputStreamReader ler = new InputStreamReader(arquivo);
             BufferedReader x = new BufferedReader(ler);
             String name = x.readLine();
             while(name != null) {
                 cliente.setNome(name);
+                System.out.println("Nome: "+name);
                 cliente.setCidade(x.readLine());
                 cliente.setEstado(x.readLine());
                 cliente.setPais(x.readLine());
                 cliente.setAniversario(x.readLine());
                 cliente.setCivil(x.readLine());
                 cliente.setSexo(x.readLine());
-                cliente.setProfissao(x.readLine());                
-                System.out.println(name);
-                name = x.readLine();
+                cliente.setProfissao(x.readLine()); 
+                name = x.readLine();                
                 model.gravar(cliente);
             }
         }catch(Exception e){

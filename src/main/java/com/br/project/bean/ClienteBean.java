@@ -7,14 +7,14 @@ import javax.persistence.*;
 import org.springframework.beans.factory.annotation.Required;
 
 @Entity
-@Table(name = "NOTE")
+@Table(name = "Usuario")
 public class ClienteBean {
 	
 	@Id @GeneratedValue 
 	@Column(name = "id")
 	private int id;
-	
-	@Column(name = "nome") 
+
+	@Column(name = "Nome") 
 	private String Nome;
 	
 	@Column(name = "Cidade")

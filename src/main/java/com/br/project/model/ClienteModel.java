@@ -15,11 +15,11 @@ public class ClienteModel {
 	
 	public boolean gravar(ClienteBean cliente) throws Exception {
 	    Session session = HibernateUtils.getSessionFactory().getCurrentSession();
-	    try {        	
+	    try {
+	    	System.out.println("Nome Gravar: "+cliente.getNome());
 	        session.beginTransaction();
 	        session.save(cliente);
 	        session.getTransaction().commit();
-	        session.close();
 	        return true;
 	    }
 	    catch (Exception e) {
@@ -30,7 +30,7 @@ public class ClienteModel {
 	}
 	
 
-	   public Map listEmployeesScalar( ){
+	   public List listalfabetica( ){
 		  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 	      try{
 	    	 Map users = null;
@@ -39,15 +39,15 @@ public class ClienteModel {
 	         SQLQuery query = session.createSQLQuery(sql);
 	         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
 	         List data = query.list();
-	
+	         System.out.println("Retorno: "+data);
 	         for(Object object : data)
 	         {
 	            users = (Map)object;
-	            System.out.print("First Name: " + users.get("Nome")); 
-	            System.out.println(", Salary: " + users.get("Cidade")); 
+	            System.out.print("First Name: " + users.get("nome")); 
+	            System.out.println("Cidade: " + users.get("cidade")); 
 	         }
 	         session.getTransaction().commit();
-	         return users;
+	         return data;
 	      }catch (Exception e) {
 		        session.getTransaction().rollback();		        
 		    }
