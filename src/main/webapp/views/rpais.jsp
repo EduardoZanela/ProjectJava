@@ -9,9 +9,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color: #929292;">
 
-<div class="container">
+<div class="container" style="background-color: #e6e6e6;">
+  <div class="jumbotron">
+  	<h1 style="text-align: center;">Trabalho Engenharia MVC</h1>
+  </div>
   <h2>Relatorio de clientes ordenado por País</h2>
   <a href="/Project/" class="btn btn-info" role="button" style="float:right">Back to home</a>
   <table class="table">
