@@ -76,10 +76,16 @@
   		<h2 style="text-align: center;">Formulario de Envio</h2>
   		<form method="POST" action="/Project/upload" enctype="multipart/form-data">
     		<div class="form-group">
-      			<label for="file">Arquivo:</label>
-      			<input type="file" name="file" class="form-control" id="file" placeholder="Enter the file">
+    		<div class="input-group">
+                <label class="input-group-btn">
+                    <span class="btn btn-primary">
+                        Browse… <input type="file" style="display: none;" name="file">
+                    </span>
+                </label>
+                <input type="text" class="form-control" readonly="">
+            </div>     			
     		</div>
-    		<input type="submit" value="Upload">
+    		<input type="submit" value="Upload" class="btn btn-info">
   		</form>
   		</div>
 	<div class="row" style="text-align: center; margin-top: 5%;">

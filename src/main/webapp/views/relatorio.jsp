@@ -84,7 +84,7 @@
         <th>Aniversario</th>
         <th>Estado Civil</th>
         <th>Sexo</th>
-        <th>Profiss„o</th>
+        <th>Profiss√£o</th>
       </tr>
     </thead>
     <tbody>
