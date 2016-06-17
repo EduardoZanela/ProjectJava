@@ -30,7 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body style="background-color: #929292;">
+<body id="page-top" class="index">
 
 <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -72,8 +72,8 @@
     <section id="portfolio">
     <div class="container">
     <div class="row" >
-  <h2 style="float: left; margin-bottom: 3%;">${title}</h2>
-  <a href="/Project/" class="btn btn-info" role="button" style="float: right; margin-top: 2%;">Back to home</a>
+  <h2 style="float: left; margin-bottom: 3%; margin-top: 5px; font-size: 33px;">${title}</h2>
+  <a href="/Project/" class="btn btn-info" role="button" style="float: right;">Back to home</a>
   <table class="table">
     <thead>
       <tr>
@@ -105,5 +105,25 @@
 </div>
 
     </section>
+    
+    </section>
+
+    <!-- jQuery -->
+    <script src="resorces/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="resources/js/classie.js"></script>
+    <script src="resources/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="resources/js/jqBootstrapValidation.js"></script>
+    <script src="resources/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="resources/js/freelancer.js"></script>
 </body>
 </html>
