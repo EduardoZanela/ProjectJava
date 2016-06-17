@@ -7,6 +7,10 @@
  
   <display-name>Project</display-name>  
   
+  <error-page>
+    <location>/error</location>
+</error-page>
+  
   <listener>
   	<listener-class>
 		org.springframework.web.context.ContextLoaderListener

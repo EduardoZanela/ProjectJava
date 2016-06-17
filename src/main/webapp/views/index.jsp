@@ -1,24 +1,39 @@
 <html>
 <head>
-	<title>Projeto Engenharia</title>
-	<meta charset="UTF-8">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<body>
-	<div class="container" style="display: block; text-align: center; width: 50%; margin: 2% auto 0 auto;">
-		<div class="title" style="display: block; text-align: center; margin: 2% auto 0 auto;">
-			<h1>Projeto Engenharia</h1>
-		</div>
-		<div class="formulario" style="display: block; text-align: center; width: 50%; margin: 15% auto 0 auto; ">
-			<form method="POST" action="/Project/upload" enctype="multipart/form-data">
-				File to upload: <input type="file" name="file"> 
-				<input type="submit" value="Upload">
-	</form>	
-		</div>
-		<div class="Relatorios" style="display: block; text-align: center; margin: 15% auto 0 auto; ">
-			<a href="/Project/ralfabetica"><h2>Relatório de clientes em ordem alfabética</h2></a>
-			<a href="/Project/rcidade"><h2>Relatório de clientes por ordem de cidade</h2></a>
-			<a href="/Project/rpais"><h2>Relatório de clientes por ordem de País</h2></a>
-		</div>
-	</div>
+<body style="background-color: #929292;">
+	<div class="container" style="background-color: #e6e6e6; margin-top: 10%;">
+  		<div class="jumbotron">
+    		<h1 style="text-align: center;">Trabalho Engenharia MVC</h1>
+  		</div>
+
+  		<h2>Formulario de Envio</h2>
+  		<form method="POST" action="/Project/upload" enctype="multipart/form-data">
+    		<div class="form-group">
+      			<label for="file">Arquivo:</label>
+      			<input type="file" name="file" class="form-control" id="file" placeholder="Enter the file">
+    		</div>
+    		<input type="submit" value="Upload">
+  		</form>
+	
+		<h2>Relatorios</h2>
+	  	<ul class="list-group">
+	    	<li class="list-group-item"><span class="badge">1</span>
+	    		<a href="/Project/ralfabetica">Relatório de clientes em ordem alfabética</a>
+	    	</li>
+	    	<li class="list-group-item"><span class="badge">2</span>
+	    		<a href="/Project/rcidade">Relatório de clientes por ordem de cidade</a>    	
+	    	</li>
+	    	<li class="list-group-item"><span class="badge">3</span> 
+	    		<a href="/Project/rpais">Relatório de clientes por ordem de País</a>
+	    	</li>
+	  	</ul>
+  	</div>
 </body>
 </html>
