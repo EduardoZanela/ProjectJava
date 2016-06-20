@@ -1,25 +1,23 @@
-<!DOCTYPE html5>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Ordenacao NAlfabetica</title>
+  <title>Relatorio</title>
   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
   
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Freelancer - Start Bootstrap Theme</title>
-
+	<c:url value="/resources" var="url"/>
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${url}/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="resources/css/freelancer.css" rel="stylesheet">
+    <link href="${url}/css/freelancer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${url}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -57,7 +55,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="resources/img/profile.png" alt="">
+                    <img class="img-responsive" src="${url}/img/profile.png" alt="">
                     <div class="intro-text">
                         <span class="name">Trabalho Engenharia MVC</span>
                         <hr class="star-light">
@@ -103,27 +101,26 @@
     </tbody>
   </table>
 </div>
+</div>
 
-    </section>
-    
     </section>
 
     <!-- jQuery -->
-    <script src="resorces/js/jquery.js"></script>
+    <script src="${url}/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="${url}/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="resources/js/classie.js"></script>
-    <script src="resources/js/cbpAnimatedHeader.js"></script>
+    <script src="${url}/js/classie.js"></script>
+    <script src="${url}/js/cbpAnimatedHeader.js"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="resources/js/jqBootstrapValidation.js"></script>
-    <script src="resources/js/contact_me.js"></script>
+    <script src="${url}/js/jqBootstrapValidation.js"></script>
+    <script src="${url}/js/contact_me.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="resources/js/freelancer.js"></script>
+    <script src="${url}/js/freelancer.js"></script>
 </body>
 </html>
