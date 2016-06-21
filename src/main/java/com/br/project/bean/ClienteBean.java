@@ -27,7 +27,7 @@ public class ClienteBean {
 	private String Pais;
 	
 	@Column(name = "Birth_Date")
-	private String Aniversario;
+	private String Birth_Date;
 	
 	@Column(name = "Civil")
 	private String Civil;
@@ -63,11 +63,11 @@ public class ClienteBean {
 	public void setPais(String pais) {
 		Pais = pais;
 	}
-	public String getAniversario() {
-		return Aniversario;
+	public String getBirthdate() {
+		return Birth_Date;
 	}
-	public void setAniversario(String aniversario) {
-		Aniversario = aniversario;
+	public void setBirthdate(String aniversario) {
+		Birth_Date = aniversario;
 	}
 	public String getCivil() {
 		return Civil;

@@ -24,7 +24,6 @@ public class ClienteModel {
 	    }
 	    catch (Exception e) {
 	        session.getTransaction().rollback();
-	        session.close();
 	        return false;
 	    }	    
 	}
@@ -35,52 +34,14 @@ public class ClienteModel {
 	      try{
 	    	 Map users = null;
 	    	 session.beginTransaction();
-	         String sql = "SELECT * FROM USUARIO ORDER BY "+order;
-	         SQLQuery query = session.createSQLQuery(sql);
-	         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-	         List data = query.list();
-	         System.out.println("Retorno: "+data);
+	    	 List lista= session.createQuery("FROM ClienteBean ORDER BY "+order).list();
+	         System.out.println("Lista: "+lista);
 	         session.getTransaction().commit();
-	         return data;
+	         return lista;
 	      }catch (Exception e) {
+	    	  System.out.println("aas"+e);
 		        session.getTransaction().rollback();		        
 		    }
 		return null;
 	   }
-	   
-	   public List listcidade( ){
-			  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
-		      try{
-		    	 Map users = null;
-		    	 session.beginTransaction();
-		    	 session.createQuery("FROM USUARIO ORDER BY CIDADE").list();
-		         String sql = "SELECT * FROM USUARIO ORDER BY CIDADE";
-		         SQLQuery query = session.createSQLQuery(sql);
-		         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-		         List data = session.createQuery("FROM USUARIO ORDER BY CIDADE").list();
-		         System.out.println("Retorno: "+data);
-		         session.getTransaction().commit();
-		         return data;
-		      }catch (Exception e) {
-			        session.getTransaction().rollback();		        
-			    }
-			return null;
-		}
-	   public List listpais( ){
-			  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
-		      try{
-		    	 Map users = null;
-		    	 session.beginTransaction();
-		         String sql = "SELECT * FROM USUARIO ORDER BY PAIS";
-		         SQLQuery query = session.createSQLQuery(sql);
-		         query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-		         List data = query.list();
-		         System.out.println("Retorno: "+data);
-		         session.getTransaction().commit();
-		         return data;
-		      }catch (Exception e) {
-			        session.getTransaction().rollback();		        
-			    }
-			return null;
-		   }
 }

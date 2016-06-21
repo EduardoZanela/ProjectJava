@@ -31,26 +31,26 @@
 <body id="page-top" class="index">
 
 <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top">MVC</a>
-            </div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#page-top">MVC</a>
+			</div>
 
-            
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
 
-    <!-- Header -->
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<!-- Header -->
     <header>
         <div class="container">
             <div class="row">
@@ -82,7 +82,7 @@
         <th>Aniversario</th>
         <th>Estado Civil</th>
         <th>Sexo</th>
-        <th>Profissão</th>
+        <th>Profissao</th>
       </tr>
     </thead>
     <tbody>
@@ -92,7 +92,7 @@
 			 <td>${a.cidade}</td>
 			 <td>${a.estado}</td>
 			 <td>${a.pais}</td>
-			 <td>${a.birth_date}</td>
+			 <td>${a.birthdate}</td>
 			 <td>${a.civil}</td>
 			 <td>${a.sexo}</td>
 			 <td>${a.profissao}</td>

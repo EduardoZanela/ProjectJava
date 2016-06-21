@@ -26,7 +26,7 @@ public class FileReader {
                 cliente.setCidade(x.readLine());
                 cliente.setEstado(x.readLine());
                 cliente.setPais(x.readLine());
-                cliente.setAniversario(x.readLine());
+                cliente.setBirthdate(x.readLine());
                 cliente.setCivil(x.readLine());
                 cliente.setSexo(x.readLine());
                 cliente.setProfissao(x.readLine()); 
@@ -34,7 +34,7 @@ public class FileReader {
                 model.gravar(cliente);
             }
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println(""+e);
             e.getStackTrace();
         }
 
