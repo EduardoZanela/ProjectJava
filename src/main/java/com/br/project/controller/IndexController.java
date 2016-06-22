@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,11 +26,21 @@ public class IndexController {
 		return mv;
 	}
 	
+	@ExceptionHandler(MissingServletRequestParameterException.class)
+    public String handleMyException(Exception  exception) {
+		return "redirect:/";
+	}
+	
 	@RequestMapping("/relatorio")
 	public ModelAndView relatorioAlfabetica(@RequestParam("param") String param) {
 		ModelAndView mv = new ModelAndView("relatorio");
 		String psql;
-		if (param.equalsIgnoreCase("nome")) {
+		if(param == null){
+			psql = "NOME";
+			mv.addObject("colorN", "color: red");
+			mv.addObject("title", "Relatorio de clientes ordenado Alfabeticamente");
+		}
+		else if (param.equalsIgnoreCase("nome")) {
 			psql = "NOME";
 			mv.addObject("colorN", "color: red");
 			mv.addObject("title", "Relatorio de clientes ordenado Alfabeticamente");
@@ -45,9 +57,12 @@ public class IndexController {
 			mv.addObject("colorN", "color: red");
 			mv.addObject("title", "Relatorio de clientes ordenado Alfabeticamente");
 		}
+		//Classe que faz a insercao e consulta a base
 		ClienteModel cm = new ClienteModel();
+		//Passa os usuarios retornados da consulta por parametro para a view
 		mv.addObject("usuarios", cm.listaClientesOrdenado(psql));
 		System.out.println("psql " + psql);
+		//retorna para view
 		return mv;
 	}
 
@@ -72,14 +87,14 @@ public class IndexController {
 				stream.close();
 				FileReader fr = new FileReader();
 				fr.read();
-				return index();
+				return new ModelAndView("redirect:/");
 
 			} catch (Exception e) {
 				e.printStackTrace();
 				return new ModelAndView("error");
 			}
 		} else {
-			return index();
+			return new ModelAndView("redirect:/");
 		}
 	}
 

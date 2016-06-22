@@ -32,7 +32,6 @@ public class ClienteModel {
 	   public List listaClientesOrdenado(String order){
 		  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 	      try{
-	    	 Map users = null;
 	    	 session.beginTransaction();
 	    	 List lista= session.createQuery("FROM ClienteBean ORDER BY "+order).list();
 	         System.out.println("Lista: "+lista);
