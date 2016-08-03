@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.br.project.model.ClienteModel;
 import com.br.project.model.FileReader;
@@ -32,7 +33,7 @@ public class IndexController {
 	}
 	
 	@RequestMapping("/relatorio")
-	public ModelAndView relatorioAlfabetica(@RequestParam("param") String param) {
+	public ModelAndView relatorioAlfabetica(@RequestParam("param") String param, @RequestParam("last") String last) {
 		ModelAndView mv = new ModelAndView("relatorio");
 		String psql;
 		if(param == null){
@@ -60,14 +61,18 @@ public class IndexController {
 		//Classe que faz a insercao e consulta a base
 		ClienteModel cm = new ClienteModel();
 		//Passa os usuarios retornados da consulta por parametro para a view
-		mv.addObject("usuarios", cm.listaClientesOrdenado(psql));
+		
+		Integer i = Integer.parseInt(last);
+		
+		mv.addObject("last", i+10);
+		//mv.addObject("usuarios", cm.listaClientesOrdenado(psql, i));
 		System.out.println("psql " + psql);
 		//retorna para view
 		return mv;
 	}
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public @ResponseBody ModelAndView handleFileUpload(@RequestParam("file") MultipartFile file) {
+	public @ResponseBody ModelAndView handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
 		if (!file.isEmpty()) {
 			try {
 
@@ -87,13 +92,16 @@ public class IndexController {
 				stream.close();
 				FileReader fr = new FileReader();
 				fr.read();
+				redirectAttributes.addFlashAttribute("sucesso", "Arquivo carregado com sucesso");
 				return new ModelAndView("redirect:/");
 
 			} catch (Exception e) {
 				e.printStackTrace();
-				return new ModelAndView("error");
+				redirectAttributes.addFlashAttribute("sucesso", "Erro ao carregar o arquivo, tente novamente");
+				return new ModelAndView("redirect:/");
 			}
 		} else {
+			redirectAttributes.addFlashAttribute("sucesso", "Arquivo Vazio");
 			return new ModelAndView("redirect:/");
 		}
 	}

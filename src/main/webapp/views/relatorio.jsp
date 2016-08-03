@@ -100,6 +100,11 @@
 		</c:forEach>
     </tbody>
   </table>
+  <form method="POST" action="/Project/relatorio" enctype="form-data">
+		<input type="hidden" name="param" value="nome">
+		<input type="hidden" name="last" value="${last}" />
+	    <button type="submit" class="btn btn-info btn-block">Next</button>	    			
+  </form>
 </div>
 </div>
 

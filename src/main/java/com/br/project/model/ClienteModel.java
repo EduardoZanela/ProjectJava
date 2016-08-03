@@ -29,11 +29,11 @@ public class ClienteModel {
 	}
 	
 
-	   public List listaClientesOrdenado(String order){
+	   public List listaClientesOrdenado(String order, int i){
 		  Session session = HibernateUtils.getSessionFactory().getCurrentSession();
 	      try{
 	    	 session.beginTransaction();
-	    	 List lista= session.createQuery("FROM ClienteBean ORDER BY "+order).list();
+	    	 List lista= session.createQuery("FROM ClienteBean ORDER BY "+order).setFirstResult(i).setMaxResults(i+10).list();
 	         System.out.println("Lista: "+lista);
 	         session.getTransaction().commit();
 	         return lista;
