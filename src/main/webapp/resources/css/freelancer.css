@@ -355,6 +355,13 @@ footer .footer-below {
     padding: 25px 0;
     background-color: #233140;
 }
+.btn{
+	float: left;
+}
+
+.btn-block{
+	width: 50% !important;
+}
 
 .btn-social {
     display: inline-block;

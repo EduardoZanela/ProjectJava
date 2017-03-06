@@ -100,11 +100,20 @@
 		</c:forEach>
     </tbody>
   </table>
-  <form method="POST" action="/Project/relatorio" enctype="form-data">
-		<input type="hidden" name="param" value="nome">
-		<input type="hidden" name="last" value="${last}" />
-	    <button type="submit" class="btn btn-info btn-block">Next</button>	    			
-  </form>
+  <div class="btn-group btn-group-justified">
+	  <form method="POST" action="/Project/relatorio" enctype="form-data">
+			<input type="hidden" name="param" value="nome" />
+			<input type="hidden" name="last" value="${last}" />
+			<input type="hidden" name="direction" value="next" />
+		    <button type="submit" class="btn btn-info btn-block">Next</button>	    			
+	  </form>
+	  <form method="POST" action="/Project/relatorio" enctype="form-data">
+			<input type="hidden" name="param" value="nome" />
+			<input type="hidden" name="last" value="${last}" />
+			<input type="hidden" name="direction" value="pre" />
+		    <button type="submit" class="btn btn-info btn-block">Previous</button>	    			
+	  </form>
+  </div>
 </div>
 </div>
 

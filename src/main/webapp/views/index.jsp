@@ -89,12 +89,14 @@
 	    		<form method="POST" action="/Project/relatorio" enctype="form-data">
 	    			<input type="hidden" name="param" value="nome">
 	    			<input type="hidden" name="last" value="0" />
+	    			<input type="hidden" name=direction value="null" />
 	    			<button type="submit" class="btn btn-info btn-block">Relatorio de clientes em ordem alfabetica</button>	    			
 	    		</form>
 	    	</li>
 	    	<li class="list-group-item">
 	    		<form method="POST" action="/Project/relatorio" enctype="form-data">
 	    			<input type="hidden" name="param" value="cidade">
+	    			<input type="hidden" name=direction value="null" />
 	    			<input type="hidden" name="last" value="0" />
 	    			<button type="submit" class="btn btn-info btn-block">Relatorio de clientes por ordem de cidade</button>
 	    		</form>    	
@@ -102,6 +104,7 @@
 	    	<li class="list-group-item">
 	    		<form method="POST" action="/Project/relatorio" enctype="form-data">
 	    			<input type="hidden" name="param" value="pais">
+	    			<input type="hidden" name=direction value="null" />
 	    			<input type="hidden" name="last" value="0" />
 	    			<button type="submit" class="btn btn-info btn-block">Relatorio de clientes por ordem de Pais</button>
 	    		</form>

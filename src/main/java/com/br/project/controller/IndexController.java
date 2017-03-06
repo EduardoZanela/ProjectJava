@@ -33,7 +33,7 @@ public class IndexController {
 	}
 	
 	@RequestMapping("/relatorio")
-	public ModelAndView relatorioAlfabetica(@RequestParam("param") String param, @RequestParam("last") String last) {
+	public ModelAndView relatorioAlfabetica(@RequestParam("param") String param, @RequestParam("last") String last, @RequestParam("direction") String direction) {
 		ModelAndView mv = new ModelAndView("relatorio");
 		String psql;
 		if(param == null){
@@ -64,8 +64,23 @@ public class IndexController {
 		
 		Integer i = Integer.parseInt(last);
 		
-		mv.addObject("last", i+10);
-		//mv.addObject("usuarios", cm.listaClientesOrdenado(psql, i));
+		if(direction.equalsIgnoreCase("pre")){
+			if(i > 10){
+				mv.addObject("last", i-10);
+				i = i-10;
+			}else{
+				i = 0;
+				mv.addObject("last", i);				
+			}			
+		}else if(direction.equalsIgnoreCase("next")){
+			i = i+10;
+			mv.addObject("last", i);
+		}else{
+			mv.addObject("last", 0);
+		}
+		
+		
+		mv.addObject("usuarios", cm.listaClientesOrdenado(psql, i));
 		System.out.println("psql " + psql);
 		//retorna para view
 		return mv;

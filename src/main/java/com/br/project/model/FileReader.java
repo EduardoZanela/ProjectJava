@@ -16,7 +16,7 @@ public class FileReader {
 	public void read( ) throws Exception {
 		 try{
 			//Le o arquivo e coloca em buffer
-			File file = new File ("C:\\Users\\Felipe\\Documents\\ProjetoEngenharia\\ProjectJava\\uploads\\cc.txt");
+			File file = new File ("/Volumes/TOSHIBA/cc.txt");
             FileInputStream arquivo = new FileInputStream(file);
             InputStreamReader ler = new InputStreamReader(arquivo);
             BufferedReader x = new BufferedReader(ler);

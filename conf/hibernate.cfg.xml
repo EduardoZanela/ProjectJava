@@ -13,9 +13,9 @@
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
 		        
-        <property name="connection.url">jdbc:postgresql://localhost:5432/Engenharia</property>
-        <property name="connection.username">postgres</property>
-        <property name="connection.password">sql</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/engenharia</property>
+        <property name="connection.username">eduardozanela</property>
+        <property name="connection.password"></property>
         
         <mapping class="com.br.project.bean.ClienteBean"/>
         
