@@ -3,6 +3,7 @@ package com.br.project.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.LineNumberReader;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -102,9 +103,21 @@ public class IndexController {
 				// Create the file on server
 				File serverFile = new File("C:\\Users\\Felipe\\Documents\\ProjetoEngenharia\\ProjectJava\\uploads\\"
 						+ File.separator + "cc.txt");
+				
+				LineNumberReader linhaLeitura = new LineNumberReader(new java.io.FileReader(serverFile));
+				linhaLeitura.skip(serverFile.length());
+				int qtdLinha = linhaLeitura.getLineNumber();
+				
+				System.out.println("quantidade: "+qtdLinha);
+				
 				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 				stream.write(bytes);
 				stream.close();
+				
+				
+				
+				
+				
 				FileReader fr = new FileReader();
 				fr.read();
 				redirectAttributes.addFlashAttribute("sucesso", "Arquivo carregado com sucesso");
