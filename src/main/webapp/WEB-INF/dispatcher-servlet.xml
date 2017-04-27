@@ -44,4 +44,16 @@
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 	
+	<http auto-config="true">
+	<intercept-url pattern="/**" access="ROLE_USER" />
+</http>
+
+<authentication-manager>
+  <authentication-provider>
+    <user-service>
+	<user name="eduardo" password="123456" authorities="ROLE_USER" />
+    </user-service>
+  </authentication-provider>
+</authentication-manager>
+	
 </beans>
