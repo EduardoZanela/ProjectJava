@@ -10,6 +10,7 @@
  <properties>
 	
 	<spring.version>4.2.4.RELEASE</spring.version>
+        <spring.security.version>4.2.2.RELEASE</spring.security.version>
 	<jackson.version>1.9.13</jackson.version>
   	<hibernate.version>5.0.6.Final</hibernate.version>
   	<org.slf4j-version>1.6.1</org.slf4j-version>
